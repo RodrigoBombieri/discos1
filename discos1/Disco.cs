@@ -13,6 +13,8 @@ namespace discos1
 
         public int CantidadCanciones { get; set; }
         public string UrlImagenTapa { get; set; }
+        public Estilo Estilo { get; set; }
+        public Edicion Edicion { get; set; }
 
     }
 }

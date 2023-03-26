@@ -23,6 +23,7 @@ namespace discos1
             DiscoNegocio negocio = new DiscoNegocio();
             listaDiscos = negocio.listar();
             dgvDiscos.DataSource = listaDiscos;
+            dgvDiscos.Columns["UrlImagenTapa"].Visible = false;
             CargarImagen(listaDiscos[0].UrlImagenTapa);
         }
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
