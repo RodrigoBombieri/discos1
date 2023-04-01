@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "discos1", "discos1\discos1.csproj", "{6E109A4D-DBD4-4F3C-964C-20C6225D339C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominioD", "dominioD\dominioD.csproj", "{B3CFD07D-390C-4585-932C-5A48FAC527FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocioD", "negocioD\negocioD.csproj", "{C420C10D-CA3E-4386-9C82-E2D0DBEED2DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E109A4D-DBD4-4F3C-964C-20C6225D339C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E109A4D-DBD4-4F3C-964C-20C6225D339C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E109A4D-DBD4-4F3C-964C-20C6225D339C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E109A4D-DBD4-4F3C-964C-20C6225D339C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CFD07D-390C-4585-932C-5A48FAC527FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CFD07D-390C-4585-932C-5A48FAC527FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CFD07D-390C-4585-932C-5A48FAC527FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CFD07D-390C-4585-932C-5A48FAC527FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C420C10D-CA3E-4386-9C82-E2D0DBEED2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C420C10D-CA3E-4386-9C82-E2D0DBEED2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C420C10D-CA3E-4386-9C82-E2D0DBEED2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C420C10D-CA3E-4386-9C82-E2D0DBEED2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC825256-6F1D-4A4A-8B53-1EDC113E489D}
+	EndGlobalSection
+EndGlobal

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace discos1
+namespace dominioD
 {
-    internal class Edicion
+    public class Edicion
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

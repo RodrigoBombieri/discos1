@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace discos1
+namespace dominioD
 {
-    internal class Estilo
+    public class Estilo
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
@@ -14,6 +14,6 @@ namespace discos1
         public override string ToString()
         {
             return Descripcion;
-        }
+        } 
     }
 }
