@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 439);
+            this.ClientSize = new System.Drawing.Size(1171, 470);
             this.Controls.Add(this.pibDiscos);
             this.Controls.Add(this.dgvDiscos);
             this.Name = "FormDiscos";
