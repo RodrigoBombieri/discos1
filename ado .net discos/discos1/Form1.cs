@@ -48,5 +48,10 @@ namespace discos1
             }
         }
 
+        private void btnAgregarDisco_Click(object sender, EventArgs e)
+        {
+            frmAgregarDisco alta = new frmAgregarDisco();
+            alta.ShowDialog();
+        }
     }
 }

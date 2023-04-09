@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using dominioD;
+using System.Security.Cryptography.X509Certificates;
 
 namespace negocioD
 {
@@ -53,6 +54,26 @@ namespace negocioD
             {
 
                 throw ex;
+            }
+
+        }
+
+        public void agregar(Disco nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("Insert.into DISCOS (Id, Titulo, Descripcion) values(" + nuevo.Id + " , '" + nuevo.Titulo + "' , " + nuevo.CantidadCanciones + ")");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }finally
+            {
+                datos.cerrarConexion();
             }
         }
 
