@@ -7,7 +7,7 @@ using dominioD;
 
 namespace negocioD
 {
-    internal class EstiloNegocio
+    public class EstiloNegocio
     {
         
         public List<Estilo> listar()

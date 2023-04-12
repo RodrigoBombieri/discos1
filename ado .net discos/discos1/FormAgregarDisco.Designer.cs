@@ -36,6 +36,10 @@
             this.txtCantCanciones = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblEstilo = new System.Windows.Forms.Label();
+            this.lblEdicion = new System.Windows.Forms.Label();
+            this.cboEstilo = new System.Windows.Forms.ComboBox();
+            this.cboEdicion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbId
@@ -50,7 +54,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(173, 130);
+            this.lblTitulo.Location = new System.Drawing.Point(173, 108);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(36, 13);
             this.lblTitulo.TabIndex = 1;
@@ -59,7 +63,7 @@
             // lblCantCanciones
             // 
             this.lblCantCanciones.AutoSize = true;
-            this.lblCantCanciones.Location = new System.Drawing.Point(104, 208);
+            this.lblCantCanciones.Location = new System.Drawing.Point(104, 153);
             this.lblCantCanciones.Name = "lblCantCanciones";
             this.lblCantCanciones.Size = new System.Drawing.Size(105, 13);
             this.lblCantCanciones.TabIndex = 2;
@@ -74,21 +78,21 @@
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(215, 127);
+            this.txtTitulo.Location = new System.Drawing.Point(215, 105);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(112, 20);
             this.txtTitulo.TabIndex = 4;
             // 
             // txtCantCanciones
             // 
-            this.txtCantCanciones.Location = new System.Drawing.Point(215, 205);
+            this.txtCantCanciones.Location = new System.Drawing.Point(215, 150);
             this.txtCantCanciones.Name = "txtCantCanciones";
             this.txtCantCanciones.Size = new System.Drawing.Size(112, 20);
             this.txtCantCanciones.TabIndex = 5;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(133, 305);
+            this.btnAceptar.Location = new System.Drawing.Point(122, 305);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(109, 39);
             this.btnAceptar.TabIndex = 6;
@@ -98,7 +102,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(325, 305);
+            this.btnCancelar.Location = new System.Drawing.Point(294, 305);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 39);
             this.btnCancelar.TabIndex = 7;
@@ -106,11 +110,51 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblEstilo
+            // 
+            this.lblEstilo.AutoSize = true;
+            this.lblEstilo.Location = new System.Drawing.Point(173, 193);
+            this.lblEstilo.Name = "lblEstilo";
+            this.lblEstilo.Size = new System.Drawing.Size(35, 13);
+            this.lblEstilo.TabIndex = 8;
+            this.lblEstilo.Text = "Estilo:";
+            // 
+            // lblEdicion
+            // 
+            this.lblEdicion.AutoSize = true;
+            this.lblEdicion.Location = new System.Drawing.Point(164, 235);
+            this.lblEdicion.Name = "lblEdicion";
+            this.lblEdicion.Size = new System.Drawing.Size(45, 13);
+            this.lblEdicion.TabIndex = 9;
+            this.lblEdicion.Text = "Edición:";
+            // 
+            // cboEstilo
+            // 
+            this.cboEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstilo.FormattingEnabled = true;
+            this.cboEstilo.Location = new System.Drawing.Point(215, 190);
+            this.cboEstilo.Name = "cboEstilo";
+            this.cboEstilo.Size = new System.Drawing.Size(112, 21);
+            this.cboEstilo.TabIndex = 10;
+            // 
+            // cboEdicion
+            // 
+            this.cboEdicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEdicion.FormattingEnabled = true;
+            this.cboEdicion.Location = new System.Drawing.Point(215, 232);
+            this.cboEdicion.Name = "cboEdicion";
+            this.cboEdicion.Size = new System.Drawing.Size(112, 21);
+            this.cboEdicion.TabIndex = 11;
+            // 
             // frmAgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(471, 450);
+            this.Controls.Add(this.cboEdicion);
+            this.Controls.Add(this.cboEstilo);
+            this.Controls.Add(this.lblEdicion);
+            this.Controls.Add(this.lblEstilo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtCantCanciones);
@@ -122,6 +166,7 @@
             this.Name = "frmAgregarDisco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Disco";
+            this.Load += new System.EventHandler(this.frmAgregarDisco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +182,9 @@
         private System.Windows.Forms.TextBox txtCantCanciones;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblEstilo;
+        private System.Windows.Forms.Label lblEdicion;
+        private System.Windows.Forms.ComboBox cboEstilo;
+        private System.Windows.Forms.ComboBox cboEdicion;
     }
 }
