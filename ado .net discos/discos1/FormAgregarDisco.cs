@@ -31,7 +31,7 @@ namespace discos1
 
             try
             {
-                disco.Id = int.Parse(txtId.Text);
+                //disco.Id = int.Parse(txtId.Text);
                 disco.Titulo = txtTitulo.Text;
                 disco.CantidadCanciones = int.Parse(txtCantCanciones.Text);
                 disco.Estilo = (Estilo)cboEstilo.SelectedItem;

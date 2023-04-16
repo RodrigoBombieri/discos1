@@ -64,7 +64,9 @@ namespace negocioD
 
             try
             {
-                datos.setearConsulta("Insert.into DISCOS (Id, Titulo, Descripcion) values(" + nuevo.Id + " , '" + nuevo.Titulo + "' , " + nuevo.CantidadCanciones + ")");
+                datos.setearConsulta("Insert into DISCOS (Id, Titulo, CantidadCanciones, IdEstilo, IdTipoEdicion)values(" + nuevo.Id + " , '" + nuevo.Titulo + "' , " + nuevo.CantidadCanciones + ", @idEstilo, @idTipoEdicion)");
+                datos.setearParametro("@idEstilo", nuevo.Estilo.Id);
+                datos.setearParametro("@idTipoEdicion", nuevo.Edicion.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

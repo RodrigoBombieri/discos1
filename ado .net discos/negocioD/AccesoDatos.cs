@@ -47,14 +47,6 @@ namespace negocioD
             }
         }
 
-        public void cerrarConexion()
-        {
-            if (lector != null)
-                conexion.Close();
-
-            conexion.Close();
-        }
-
         public void ejecutarAccion()
         {
             comando.Connection = conexion;
@@ -69,6 +61,21 @@ namespace negocioD
                 throw ex;
             }
         }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+
+        public void cerrarConexion()
+        {
+            if (lector != null)
+                conexion.Close();
+
+            conexion.Close();
+        }
+
 
         
     }
