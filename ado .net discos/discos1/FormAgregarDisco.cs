@@ -31,9 +31,9 @@ namespace discos1
 
             try
             {
-                //disco.Id = int.Parse(txtId.Text);
                 disco.Titulo = txtTitulo.Text;
                 disco.CantidadCanciones = int.Parse(txtCantCanciones.Text);
+                disco.UrlImagenTapa = txtUrlImagenTapa.Text;
                 disco.Estilo = (Estilo)cboEstilo.SelectedItem;
                 disco.Edicion = (Edicion)cboEdicion.SelectedItem;
 
@@ -64,6 +64,24 @@ namespace discos1
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtUrlImagenTapa_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtUrlImagenTapa.Text);
+        }
+
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                pibDiscos.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pibDiscos.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
             }
         }
     }

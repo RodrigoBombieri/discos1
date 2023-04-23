@@ -24,7 +24,7 @@ namespace negocioD
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select D.Id, Titulo, CantidadCanciones, UrlImagenTapa, E.Descripcion Estilo, T.Descripcion Edicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and D.IdTipoEdicion = T.Id";
+                comando.CommandText = "Select Titulo, CantidadCanciones, UrlImagenTapa, E.Descripcion Estilo, T.Descripcion Edicion from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and D.IdTipoEdicion = T.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -33,9 +33,10 @@ namespace negocioD
                 while (lector.Read())
                 {
                     Disco aux = new Disco();
-                    aux.Id = lector.GetInt32(0);
+                    
                     aux.Titulo = (string)lector["Titulo"];
-                    aux.CantidadCanciones = lector.GetInt32(2);
+                    aux.CantidadCanciones = lector.GetInt32(1);
+                    if (!(lector["UrlImagenTapa"] is DBNull))
                     aux.UrlImagenTapa = (string)lector["UrlImagenTapa"];
                     aux.Estilo = new Estilo();
                     aux.Estilo.Descripcion = (string)lector["Estilo"];
@@ -64,9 +65,10 @@ namespace negocioD
 
             try
             {
-                datos.setearConsulta("Insert into DISCOS (Id, Titulo, CantidadCanciones, IdEstilo, IdTipoEdicion)values(" + nuevo.Id + " , '" + nuevo.Titulo + "' , " + nuevo.CantidadCanciones + ", @idEstilo, @idTipoEdicion)");
+                datos.setearConsulta("Insert into DISCOS (Titulo, CantidadCanciones, IdEstilo, IdTipoEdicion, UrlImagenTapa)values('" + nuevo.Titulo + "' , " + nuevo.CantidadCanciones + ", @idEstilo, @idTipoEdicion, @urlImagenTapa)");
                 datos.setearParametro("@idEstilo", nuevo.Estilo.Id);
                 datos.setearParametro("@idTipoEdicion", nuevo.Edicion.Id);
+                datos.setearParametro("@urlImagenTapa", nuevo.UrlImagenTapa);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
