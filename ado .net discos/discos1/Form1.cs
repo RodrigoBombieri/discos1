@@ -37,6 +37,7 @@ namespace discos1
             {
                 listaDiscos = negocio.listar();
                 dgvDiscos.DataSource = listaDiscos;
+                dgvDiscos.Columns["Id"].Visible = false;
                 dgvDiscos.Columns["UrlImagenTapa"].Visible = false;
                 CargarImagen(listaDiscos[0].UrlImagenTapa);
             }
@@ -64,6 +65,17 @@ namespace discos1
         {
             frmAgregarDisco alta = new frmAgregarDisco();
             alta.ShowDialog();
+            Cargar();
+        }
+
+        private void btnModificarDisco_Click(object sender, EventArgs e)
+        {
+            Disco seleccionado;
+            seleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+            
+            
+            frmAgregarDisco modificar = new frmAgregarDisco(seleccionado);
+            modificar.ShowDialog();
             Cargar();
         }
     }

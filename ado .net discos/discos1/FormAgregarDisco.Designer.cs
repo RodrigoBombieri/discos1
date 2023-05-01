@@ -78,7 +78,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(122, 305);
+            this.btnAceptar.Location = new System.Drawing.Point(139, 305);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(109, 39);
             this.btnAceptar.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(294, 305);
+            this.btnCancelar.Location = new System.Drawing.Point(280, 305);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 39);
             this.btnCancelar.TabIndex = 6;
@@ -151,9 +151,9 @@
             // 
             // pibDiscos
             // 
-            this.pibDiscos.Location = new System.Drawing.Point(392, 60);
+            this.pibDiscos.Location = new System.Drawing.Point(407, 60);
             this.pibDiscos.Name = "pibDiscos";
-            this.pibDiscos.Size = new System.Drawing.Size(286, 230);
+            this.pibDiscos.Size = new System.Drawing.Size(357, 284);
             this.pibDiscos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pibDiscos.TabIndex = 13;
             this.pibDiscos.TabStop = false;
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 431);
+            this.ClientSize = new System.Drawing.Size(803, 436);
             this.Controls.Add(this.pibDiscos);
             this.Controls.Add(this.txtUrlImagenTapa);
             this.Controls.Add(this.lblUrlImagenTapa);
