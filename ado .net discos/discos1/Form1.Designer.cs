@@ -32,6 +32,7 @@
             this.pibDiscos = new System.Windows.Forms.PictureBox();
             this.btnAgregarDisco = new System.Windows.Forms.Button();
             this.btnModificarDisco = new System.Windows.Forms.Button();
+            this.btnEliminarFisico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibDiscos)).BeginInit();
             this.SuspendLayout();
@@ -79,11 +80,23 @@
             this.btnModificarDisco.UseVisualStyleBackColor = true;
             this.btnModificarDisco.Click += new System.EventHandler(this.btnModificarDisco_Click);
             // 
+            // btnEliminarFisico
+            // 
+            this.btnEliminarFisico.Location = new System.Drawing.Point(305, 414);
+            this.btnEliminarFisico.Name = "btnEliminarFisico";
+            this.btnEliminarFisico.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEliminarFisico.Size = new System.Drawing.Size(104, 38);
+            this.btnEliminarFisico.TabIndex = 4;
+            this.btnEliminarFisico.Text = "Eliminar Fisico";
+            this.btnEliminarFisico.UseVisualStyleBackColor = true;
+            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
+            // 
             // FormDiscos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 470);
+            this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificarDisco);
             this.Controls.Add(this.btnAgregarDisco);
             this.Controls.Add(this.pibDiscos);
@@ -104,6 +117,7 @@
         private System.Windows.Forms.PictureBox pibDiscos;
         private System.Windows.Forms.Button btnAgregarDisco;
         private System.Windows.Forms.Button btnModificarDisco;
+        private System.Windows.Forms.Button btnEliminarFisico;
     }
 }
 

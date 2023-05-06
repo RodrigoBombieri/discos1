@@ -35,11 +35,15 @@ namespace discos1
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Disco disco = new Disco();
             DiscoNegocio negocio = new DiscoNegocio();
 
             try
             {
+                if (disco == null)
+                {
+                    disco = new Disco();
+                }
+                              
                 disco.Titulo = txtTitulo.Text;
                 disco.CantidadCanciones = int.Parse(txtCantCanciones.Text);
                 disco.UrlImagenTapa = txtUrlImagenTapa.Text;
@@ -60,10 +64,6 @@ namespace discos1
 
                 Close();
 
-                if (disco == null)
-                {
-                    disco = new Disco();
-                }
 
             }
             catch (Exception ex)
