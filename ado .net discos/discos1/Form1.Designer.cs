@@ -33,6 +33,9 @@
             this.btnAgregarDisco = new System.Windows.Forms.Button();
             this.btnModificarDisco = new System.Windows.Forms.Button();
             this.btnEliminarFisico = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibDiscos)).BeginInit();
             this.SuspendLayout();
@@ -91,11 +94,40 @@
             this.btnEliminarFisico.UseVisualStyleBackColor = true;
             this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(64, 38);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(32, 13);
+            this.lblFiltro.TabIndex = 5;
+            this.lblFiltro.Text = "Filtro:";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(102, 35);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(192, 20);
+            this.txtFiltro.TabIndex = 6;
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Location = new System.Drawing.Point(305, 35);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(84, 20);
+            this.btnFiltro.TabIndex = 7;
+            this.btnFiltro.Text = "Buscar";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // FormDiscos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1171, 470);
+            this.Controls.Add(this.btnFiltro);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificarDisco);
             this.Controls.Add(this.btnAgregarDisco);
@@ -108,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibDiscos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,6 +151,9 @@
         private System.Windows.Forms.Button btnAgregarDisco;
         private System.Windows.Forms.Button btnModificarDisco;
         private System.Windows.Forms.Button btnEliminarFisico;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }
 
