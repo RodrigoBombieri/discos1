@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominioD;
 using negocioD;
+using System.Configuration;
 
 namespace discos1
 {
     public partial class frmAgregarDisco : Form
     {
         private Disco disco = null;
+
+        private OpenFileDialog archivo = null;
         
         public frmAgregarDisco()
         {
@@ -60,6 +64,14 @@ namespace discos1
                     negocio.agregar(disco);
                     MessageBox.Show("Agregado exitosamente");
 
+                }
+
+                // guardo imagen si la levanto localmente
+                // si el archivo es distinto de nulo, y NO tiene un http, significa que quiero guardar un archivo local y no un archivo web.
+                // haciendo esta validaci{on, la imagen SOLO SE GUARDA EN NUESTRA CARPETA si le damos Agregar.. si cancelamos cuando estamos creando un nuevo disco, la imagen no se guarda.
+                if(archivo != null && !(txtUrlImagenTapa.Text.ToUpper().Contains("HTTP")))
+                {
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["disco-app"] + archivo.SafeFileName);
                 }
 
                 Close();
@@ -124,6 +136,22 @@ namespace discos1
 
                 pibDiscos.Load("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
             }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png;|jpeg|*.jpeg";
+            
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagenTapa.Text = archivo.FileName;
+                CargarImagen(archivo.FileName);
+
+            }
+
+            //guardar imagen
+            //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["disco-app"] + archivo.SafeFileName);
         }
     }
 }

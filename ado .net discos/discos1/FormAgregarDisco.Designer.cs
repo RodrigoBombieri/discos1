@@ -41,6 +41,7 @@
             this.lblUrlImagenTapa = new System.Windows.Forms.Label();
             this.txtUrlImagenTapa = new System.Windows.Forms.TextBox();
             this.pibDiscos = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pibDiscos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,7 +144,7 @@
             // 
             // txtUrlImagenTapa
             // 
-            this.txtUrlImagenTapa.Location = new System.Drawing.Point(215, 158);
+            this.txtUrlImagenTapa.Location = new System.Drawing.Point(215, 157);
             this.txtUrlImagenTapa.Name = "txtUrlImagenTapa";
             this.txtUrlImagenTapa.Size = new System.Drawing.Size(112, 20);
             this.txtUrlImagenTapa.TabIndex = 2;
@@ -158,11 +159,22 @@
             this.pibDiscos.TabIndex = 13;
             this.pibDiscos.TabStop = false;
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(344, 157);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(24, 21);
+            this.btnAgregarImagen.TabIndex = 14;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
             // frmAgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 436);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pibDiscos);
             this.Controls.Add(this.txtUrlImagenTapa);
             this.Controls.Add(this.lblUrlImagenTapa);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Label lblUrlImagenTapa;
         private System.Windows.Forms.TextBox txtUrlImagenTapa;
         private System.Windows.Forms.PictureBox pibDiscos;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }
