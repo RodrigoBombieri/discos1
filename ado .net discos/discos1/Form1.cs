@@ -23,6 +23,8 @@ namespace discos1
         private void FormDiscos_Load(object sender, EventArgs e)
         {
             Cargar();
+            cboCampo.Items.Add("Titulo");
+            cboCampo.Items.Add("Cantidad de Canciones");
         }
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
@@ -111,10 +113,30 @@ namespace discos1
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
+            DiscoNegocio negocio = new DiscoNegocio();
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvDiscos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
             List<Disco> listafiltrada;
             string filtro = txtFiltro.Text;
 
-            if(filtro != "")
+            if (filtro != "")
             {
                 listafiltrada = listaDiscos.FindAll(x => x.Titulo.ToUpper().Contains(filtro.ToUpper()) || x.Estilo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -127,6 +149,26 @@ namespace discos1
             dgvDiscos.DataSource = listafiltrada;
             ocultarColumnas();
 
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            if (opcion == "Cantidad de Canciones")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
         }
     }
 }

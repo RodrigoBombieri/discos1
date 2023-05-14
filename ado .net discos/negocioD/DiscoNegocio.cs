@@ -126,5 +126,78 @@ namespace negocioD
             }
         }
 
+        public List<Disco> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Disco> lista = new List<Disco>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "Select Titulo, CantidadCanciones, UrlImagenTapa, E.Descripcion Estilo, T.Descripcion Edicion, D.IdEstilo, D.IdTipoEdicion, D.Id from DISCOS D, ESTILOS E, TIPOSEDICION T where D.IdEstilo = E.Id and D.IdTipoEdicion = T.Id And ";
+                if (campo == "Cantidad de Canciones")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += "CantidadCanciones > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += "CantidadCanciones < " + filtro;
+                            break;
+                        case "Igual a":
+                            consulta += "CantidadCanciones = " + filtro;
+                            break;
+
+                    }
+                }
+                else if (campo == "Titulo")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += "Titulo like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "Titulo like '%" + filtro + "'";
+                            break;
+                        case "Contiene":
+                            consulta += "Titulo like '%" + filtro +"%'";
+                            break;
+
+                    }
+                }
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Disco aux = new Disco();
+
+                    aux.Titulo = (string)datos.Lector["Titulo"];
+                    aux.CantidadCanciones = datos.Lector.GetInt32(1);
+                    aux.Id = (int)datos.Lector["Id"];
+                    if (!(datos.Lector["UrlImagenTapa"] is DBNull))
+                        aux.UrlImagenTapa = (string)datos.Lector["UrlImagenTapa"];
+                    aux.Estilo = new Estilo();
+                    aux.Estilo.Id = (int)datos.Lector["IdEstilo"];
+                    aux.Estilo.Descripcion = (string)datos.Lector["Estilo"];
+                    aux.Edicion = new Edicion();
+                    aux.Edicion.Id = (int)datos.Lector["IdTipoEdicion"];
+                    aux.Edicion.Descripcion = (string)datos.Lector["Edicion"];
+
+
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
