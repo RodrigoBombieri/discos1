@@ -111,12 +111,58 @@ namespace discos1
             }
         }
 
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione un campo para filtrar.");
+                return true;
+            }
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor seleccione un criterio para filtrar.");
+                return true;
+            }
+            
+            if(cboCampo.SelectedItem.ToString() == "Cantidad de Canciones")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Debes cargar el filtro para numéricos.");
+                    return true;
+                }
+                if (!(soloNumero(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Solo números por favor!");
+                    return true;
+                }
+            }
+                        
+            return false;
+        }
+
+        private bool soloNumero(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             DiscoNegocio negocio = new DiscoNegocio();
 
             try
             {
+                if (validarFiltro())
+                    return;
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
